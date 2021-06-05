@@ -30,7 +30,21 @@ function setup(){
         }); 
     });
 
+    // =========================== toggle the list ==================================
+    var tog = document.getElementsByClassName("togglelist");
+    var i;
     
+    for (i = 0; i < tog.length; i++) {
+      tog[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
 
 }
 
@@ -114,5 +128,27 @@ function draw(){
         //         document.getElementById(btnid).classList.add("active");
         //     }
         // });
-        
+    
+
+    
 }
+
+
+
+function toggletext(){
+    var tog = document.getElementsByClassName("togglelist");
+    var i;
+    
+    for (i = 0; i < tog.length; i++) {
+      tog[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+}
+

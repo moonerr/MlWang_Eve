@@ -124,6 +124,7 @@ img:first-child {
 /* .menu a:hover:not(.active) {
   left: -2em;
 } */
+
 a.active,
 .btn:hover {
   left: -2em;
@@ -206,3 +207,26 @@ article {
   margin: 0 2em;
   top: -5em;
 }
+
+/* ================================ Style How ============================ */
+.togglelist:hover {
+  text-decoration: underline;
+}
+
+.listtext {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: rgb(5, 5, 5);
+}
+
+code {
+  background-color: rgb(63, 63, 63);
+}
+.sketch {
+  float: right;
+}
+
+/* ================================ Style Why ============================ */
+
+/* ================================ Style Who ============================ */

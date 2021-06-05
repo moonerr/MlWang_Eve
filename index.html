@@ -114,8 +114,8 @@
         <div id="actual" class="content">
             <h2 style ="background-color: rgb(255, 105, 5)";>The 'Actual'</h2>
             <div id="actualcontent" class="content">
-                <iframe width="1213" height="692" src="https://www.youtube.com/embed/HSSMKvYEqzA"  
-                frameborder="0" allowfullscreen></iframe>   
+                <!-- <iframe width="1213" height="692" src="https://www.youtube.com/embed/HSSMKvYEqzA"  
+                frameborder="0" allowfullscreen></iframe>    -->
             </div>
 
         </div>
@@ -128,30 +128,60 @@
     <article id="howcontent" class="contentcontainer" >
 
         <div id="sound" class="content">
-            <h2 style ="background-color: #ffd5cd; color: black;">How does the suround sound work?</h2>
-            <p>Devices: </p>
-                <ul>force sensitive resistors * 2</ul>
-                <ul>vibration motor * 2</ul>
-                <ul>LED Strap</ul>
-                <ul>Arduino Uno</ul>
-                <ul>laptop(processing)</ul>
+            <h2 style ="background-color: #f9813a; color: black;">How does the suround sound work?</h2>
+            <div id="hardware" class="innercontent">
+                <img class="sketch circuit" width="80%" src="sketches/circuit.png" alt="circuit for surround sound">
 
-            <img  width="80%" src="sketches/circuit.png" alt="circuit for surround sound">
-            <iframe width="80%" height="600" 
-            src="https://www.circuito.io/app?components=512,8449,8449,9375,9375,11021,12022" frameborder="0"></iframe>
+                <h3>Hardware </h3>
+                <ol>
+                    <li class="togglelist">- Force Sensitive Resistors (FSR) * 2</li>
+                    <div class="listtext">
+                        <p> FSR is Used for detecting the pressure applied by two hands.
+                            It converts the force to an analog voltage. 
+                            Arduino converts the analog voltage into digital one, 
+                            ranged from 0 to 1023. 
+                            The harder users squeeze FSR, the bigger the number is.
+                        </p>
+                    </div>
+                    
+                    <li class="togglelist">- Arduino Uno</li>
+                    <div class="listtext">
+                        <p> It is a basic set for makers, 
+                            powered by a USB porter or any 5V power port.
+                        </p>
+                    </div>
+                    <li class="togglelist">- Laptop(processing)</li>
+                    <div class="listtext">
+                        <p> Lap top is used for executing Processing code and give out sound with its two-channel speakers.
+                        </p>
+                    </div>
+                    <li class="togglelist">- Vibrating Mini Motor Disc (VM) * 2</li>
+                    <div class="listtext">
+                        <p> VM is offering vibration feedback to users.
+                            Arduino could send analog voltages by <code>'analogWrite(PIN, VALUE)'</code>  as input to power the motors.                        </p>
+                    </div>
+                </ol>
+                    
+                <p></p>
+            </div>
+           <div id="software" class="innercontent">
+
+           </div>
+
+            
         </div>
 
         <div id="ball" class="content">
-            <h2 style ="background-color: #ffd5cd; color: black;";>How did I made the ball?</h2>
+            <h2 style ="background-color: #f9813a; color: black;";>How did I made the ball?</h2>
             <p>blabla</p>
         </div>
             
         <div id="material" class="content">
-            <h2 style ="background-color: #ffd5cd; color: black;">Supported Materials</h2>
+            <h2 style ="background-color: #f9813a; color: black;">Supported Materials</h2>
             <h3> Journal </h3>
-            <iframe width="80%" height="600"
+            <!-- <iframe width="80%" height="600"
             src="https://miro.com/app/live-embed/o9J_lTaiX1U=/?moveToViewport=-3167,-1683,12149,3638" 
-            frameBorder="0" scrolling="no" allowFullScreen></iframe>
+            frameBorder="0" scrolling="no" allowFullScreen></iframe> -->
             <h3> Related Work</h3>
             <object width="80%" height="600"  data="related/guide.pdf" type="application/pdf">
                 <embed src="related/guide.pdf" type="application/pdf" />
@@ -165,13 +195,13 @@
     <article id="whycontent" class="contentcontainer" >
         
         <div id="desk" class="content">
-            <h2 style ="background-color: #f9813a";>Desk Research</h2>
+            <h2 style ="background-color: #ffd5cd";>Desk Research</h2>
 
             <p>blabla</p>
         </div>
     
         <div id="user" class="content">
-            <h2 style ="background-color: #f9813a";>User Research</h2>
+            <h2 style ="background-color: #ffd5cd";>User Research</h2>
             <p>blabla</p>
 
         </div>
