@@ -4,8 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <title>Mengling's Portfolio</title>
-        <script src="p5.js"></script>
-        <script src="p5.sound.js"></script>
+        <script src="libraries/p5.js"></script>
+        <script src="libraries/p5.sound.js"></script>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://use.typekit.net/ofp7xlg.css">  
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">      
@@ -30,8 +30,8 @@
         <div class="menubar" id="menu">
 
             <a href="#whatcontent" id="what" class="btn active">What</a>
-            <a href="#whycontent"id="why"class="btn">Why</a>
             <a href="#howcontent" id="how" class="btn">How</a>
+            <a href="#whycontent"id="why"class="btn">Why</a>
             <a href="#whocontent" id="who"class="btn">Who</a>
         </div>
       
@@ -119,21 +119,7 @@
         </article>
 
         
-        <article id="whycontent" class="contentcontainer" >
-            
-                <div id="desk" class="content">
-                    <h2 style ="background-color: #f9813a";>Desk Research</h2>
 
-                    <p>blabla</p>
-                </div>
-           
-                <div id="user" class="content">
-                    <h2 style ="background-color: #f9813a";>User Research</h2>
-                    <p>blabla</p>
-
-                </div>
-            
-        </article>
             
         <article id="howcontent" class="contentcontainer" >
                 <div id="ball" class="content">
@@ -147,15 +133,32 @@
                 <div id="material" class="content">
                     <h2 style ="background-color: #ffd5cd; color: black;">Supported Materials</h2>
                     <h3> Journal </h3>
-                    <iframe src="https://miro.com/app/board/o9J_lTaiX1U=/" frameborder="0"></iframe>
-
+                    <iframe width="80%" height="600"
+                    src="https://miro.com/app/live-embed/o9J_lTaiX1U=/?moveToViewport=-3167,-1683,12149,3638" 
+                    frameBorder="0" scrolling="no" allowFullScreen></iframe>
                     <h3> Related Work</h3>
-                    <object data="related/guide.pdf" type="application/pdf">
+                    <object width="80%" height="600"  data="related/guide.pdf" type="application/pdf">
                         <embed src="related/guide.pdf" type="application/pdf" />
                     </object>
                     <p>blabla</p>
                 </div>
-        </article>        
+        </article>    
+        
+        <article id="whycontent" class="contentcontainer" >
+            
+            <div id="desk" class="content">
+                <h2 style ="background-color: #f9813a";>Desk Research</h2>
+
+                <p>blabla</p>
+            </div>
+       
+            <div id="user" class="content">
+                <h2 style ="background-color: #f9813a";>User Research</h2>
+                <p>blabla</p>
+
+            </div>
+        
+    </article>
         
         <article id="whocontent" class="contentcontainer" >
 
