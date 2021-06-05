@@ -18,8 +18,8 @@ h1 {
   font-weight: lighter;
   background: -webkit-linear-gradient(
     bottom,
-    rgb(255, 197, 8),
-    rgb(255, 76, 45)
+    rgb(255, 112, 87),
+    rgb(235, 77, 50)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -33,6 +33,7 @@ h3 {
   font-size: 1.4em;
   font-weight: 500;
   /* text-align: center; */
+  color: rgb(255, 112, 87);
 }
 h4 {
   font-size: 1.2em;
@@ -132,20 +133,20 @@ a.active,
 
 #what {
   top: 9em;
-  background-color: #fa6b18;
+  background-color: rgb(255, 94, 65);
 }
 
 #how {
   top: 12.5em;
-  background-color: #f9813a;
+  background-color: rgb(255, 112, 87);
 }
 #why {
   top: 16em;
-  background-color: #ffd5cd;
+  background-color: #fc9c89;
 }
 #who {
   top: 19.5em;
-  background-color: #fcf1f1;
+  background-color: #fdd9d2;
 }
 
 /* =================== Responsive the menu ====================================*/
@@ -209,22 +210,49 @@ article {
 }
 
 /* ================================ Style How ============================ */
+
+.listcontainer {
+  /* margin-top: 3em; */
+}
+
+.listcontainer:not(:first-child) {
+  margin-bottom: 4em;
+}
+
+.togglelist {
+  margin: 1em;
+  padding: 1em 1em 1em 0;
+  /* overflow: hidden; */
+  font-size: 1.2em;
+}
+
 .togglelist:hover {
-  text-decoration: underline;
+  background-color: rgb(255, 112, 87);
+  color: #1a1c20;
+  overflow: hidden;
 }
 
 .listtext {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: rgb(5, 5, 5);
+  background-color: rgba(255, 255, 255, 0.007);
+  color: rgb(161, 159, 159);
+  font-weight: 100;
+  padding: 0 2em;
 }
 
 code {
-  background-color: rgb(63, 63, 63);
+  color: rgb(216, 216, 216);
+  font-style: normal;
 }
-.sketch {
+
+.circuit {
   float: right;
+  width: 60%;
+  margin: 2em 5% 0 5%;
+  /* margin-right: 5%; */
+  /* margin-top: -5em; */
 }
 
 /* ================================ Style Why ============================ */

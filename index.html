@@ -42,11 +42,11 @@
     <article id="whatcontent" class="contentcontainer" >
         <!-- <div id="ideal"> -->
         <div id="ideal" class="content">
-            <h2 style ="background-color: rgb(255, 105, 5)";>The 'Ideal'</h2>
+            <h2 style ="background-color: rgb(255, 94, 65); color: black;";>The 'Ideal'</h2>
             <div id="problemstatement" class="innercontent">
                 <img id="sketch1" src="sketches/stressed.png" alt="a stressed person" >
 
-                <h3 ><span style="font-style:normal;">&#127770;</span> Problem Statement</h3>
+                <h3><span style="font-style:normal;">&#127770;</span> Problem Statement</h3>
                 <h4 > # Team's perspective</h4>
                 <p>
                     Stress can cause harm to people’s mental and physical health and reduce the overall happiness of society <sup class="cite">(1)</sup>.
@@ -59,7 +59,7 @@
                 <h4># Individual perspective</h4>
                 
                 <p>
-                    <span style="color: rgb(255, 168, 134);">? Why is 'stress' the focus</span>
+                    <span>? Why is 'stress' the focus</span>
                     <br>
                     From my desk research, it looks clear that stress is generated during people's coping with their environment<sup class="intextcite">(2)</sup>.
                     And from personal observations also, being stressed is often treated as a failure of emotional management. 
@@ -74,7 +74,7 @@
                 </p>
 
                 <p>
-                    <span style="color: rgb(255, 168, 134);">? Why young adults </span>
+                    <span>? Why young adults </span>
                     <br>As a semester project, we are supposed to build one prototype to demonstrate our concepts. Even though we found being stressful can occur to anyone,
                     we still need to focus on a specific group to tailor the requirements and constraints to practical design work.
                     We choose young adults, not only for they are facing much stress and also for it is more accessible for us to observe their
@@ -82,7 +82,7 @@
                 </p>
             </div>
             <div id="intentedconcept" class="inercontent">
-            <h3><span style="font-style:normal">&#127773;</span> Intended Concept</h3>
+            <h3 ><span style="font-style:normal">&#127773;</span> Intended Concept</h3>
 
             <p>
                 My solution for future Mundane to this problem is to build a private space for the public. 
@@ -112,7 +112,7 @@
         <!-- </div> -->
         
         <div id="actual" class="content">
-            <h2 style ="background-color: rgb(255, 105, 5)";>The 'Actual'</h2>
+            <h2 style ="background-color: rgb(255, 94, 65);color: black;">The 'Actual'</h2>
             <div id="actualcontent" class="content">
                 <!-- <iframe width="1213" height="692" src="https://www.youtube.com/embed/HSSMKvYEqzA"  
                 frameborder="0" allowfullscreen></iframe>    -->
@@ -127,14 +127,20 @@
         
     <article id="howcontent" class="contentcontainer" >
 
+<!-- ---------------------------------How sound---------------------------- -->
+
         <div id="sound" class="content">
-            <h2 style ="background-color: #f9813a; color: black;">How does the suround sound work?</h2>
+
+            <h2 style ="background-color: rgb(255, 112, 87); color: black;">How does the suround sound work?</h2>
+            <!-- ---------------------------------hardware---------------------------- -->
+
             <div id="hardware" class="innercontent">
-                <img class="sketch circuit" width="80%" src="sketches/circuit.png" alt="circuit for surround sound">
 
                 <h3>Hardware </h3>
-                <ol>
-                    <li class="togglelist">- Force Sensitive Resistors (FSR) * 2</li>
+                <img class="sketch circuit" width="80%" src="sketches/circuit.png" alt="circuit for surround sound">
+                <br>
+                <ol class="listcontainer">
+                    <li class="togglelist"> Force Sensitive Resistors (FSR) * 2</li>
                     <div class="listtext">
                         <p> FSR is Used for detecting the pressure applied by two hands.
                             It converts the force to an analog voltage. 
@@ -144,40 +150,243 @@
                         </p>
                     </div>
                     
-                    <li class="togglelist">- Arduino Uno</li>
+                    <li class="togglelist"> Arduino Uno</li>
                     <div class="listtext">
                         <p> It is a basic set for makers, 
                             powered by a USB porter or any 5V power port.
+                            It is used as a controler to cope with inputs and outputs.
+                            It receives the signals from FSR and sends them to laptop(Processing). 
                         </p>
                     </div>
-                    <li class="togglelist">- Laptop(processing)</li>
+                    <li class="togglelist"> Arduino Lilypad </li>
                     <div class="listtext">
-                        <p> Lap top is used for executing Processing code and give out sound with its two-channel speakers.
+                        <p>
+                            Lilypad gives back its acceleratio in Y-axis when it rolls.
+                            And it will send to processing as a input to 
+                            control the balance of music.                       
                         </p>
                     </div>
-                    <li class="togglelist">- Vibrating Mini Motor Disc (VM) * 2</li>
+
+                    <li class="togglelist"> Laptop (processing) with speakers</li>
                     <div class="listtext">
-                        <p> VM is offering vibration feedback to users.
-                            Arduino could send analog voltages by <code>'analogWrite(PIN, VALUE)'</code>  as input to power the motors.                        </p>
+                        <p> Lap top is used for executing Processing code 
+                            and give out sound with its two-channel speakers.
+                        </p>
                     </div>
+                    
                 </ol>
                     
                 <p></p>
             </div>
+
+        <!-- ---------------------------------software---------------------------- -->
+
            <div id="software" class="innercontent">
-
-           </div>
-
+            <h3>Sofeware </h3>
+            <br>
+            <h4># Code with Arduino</h4>
+            <ol class="listcontainer">
+                <li class="togglelist"> Read the value from FSR </li>
+                <div class="listtext">
+                    <p>
+                        Connect the FSR to Arduino with A0, A1 as input port.
+                        Get the value from the two pins by method 
+                        <code>analogRead(PIN)</code>.                      
+                    </p>
+                    <pre>
+                        <code>
+                        int fsrAnalogPinLeft = A0; // Left FSR is connected to analog 0
+                        int fsrAnalogPinRight = A1; // Right FSR is connected to anolog 1
+                        int fsrReadingLeft, fsrReadingRight;      // the analog reading from the FSR resistor divider
             
+                        void setup() {
+                        // Init USB serial port for debugging
+                        Serial.begin(9600);
+                        }
+            
+                        void loop() {
+                        //get the fst number
+                        fsrReadingLeft = analogRead(fsrAnalogPinLeft);
+                        fsrReadingRight = analogRead(fsrAnalogPinRight);
+                        }
+                        </code>
+                        </pre>
+                </div>
+                <li class="togglelist"> Prepare the value for communication with Processing </li>
+                <div class="listtext">
+                    <p>
+                        The virable <code>Adjust</code> is created to calculate the difference 
+                        between the values of pressure for each side.
+                        Thus, the first step is to use one value to minus the other.
+                        <br>
+                        Then because the default frame rate of Processing is 60, which is to say,
+                        it will read about every 20ms. So secondly, it is essential to
+                        set a timmer for the arduino to send the value every 50ms, which should be 
+                        no less than 20ms.
+                        <br>
+                        It is also important to check the writing capability of Arduino Uno.
+                        While using <code>Serial.write()</code>, the data is sent by <em>One byte</em> 
+                        each time. So it is why in here Adjust was mapped to 0 ~ 2<sup>8</sup>-1.
+                                              
+                    </p>
+                    <pre>
+                        <code>
+                        //set a timer
+                        unsigned long timer = 0;
+                        void loop() {
+                            ...
+                            
+                            //prepare the value of adjuat
+                            int Adjust;
+                            Adjust = (fsrReadingRight - fsrReadingLeft);//The stronger side wins
+                            Adjust = map(Adjust, -1000, 1000,0,255); //map to fit the O/I limitation
+                            
+                            //Let the arduino send the value every 50ms
+                            if((millis()-timer)>50){ 
+                                if (fsrReadingRight != 0 || fsrReadingLeft != 0){
+                                    Serial.write(Adjust);}
+                                timer = millis();  
+                            }
+                        }
+                        </code>
+                        </pre>
+                </div>
+            </ol>
+            
+            <h4># Code with Processing</h4>
+            <ol class="listcontainer">
+                <li class="togglelist" > Import libraries</li>
+                <div class="listtext">
+                    <p>
+                        The serial library is used for communicating with Arduino.
+                        The sound library is used for control the music.              
+                    </p>
+                    <pre>
+                        <code>
+                        import processing.serial.*;
+                        import processing.sound.*;
+                        </code>
+                        </pre>
+                </div>
+                <li class="togglelist"> Prepare variables and setup the port </li>
+                <div class="listtext">
+                    <p>
+                        There are much more balls connected, so the port in use are more than two.
+                        <code>myportN</code> is used to contain the port from the port list.
+                        <code>posN</code> is used to store the value sent by Arduino.
+                        It is surprising to find that when we use USB hubs, the port name will expand by two numbers.
+                        So it will be better to use port list to get their names. 
+                        <br>
+                        <code>SoundFile()</code> is also used in setup block to bind the virable to the music file.
+                        It is also worth of pointing out that the sound file should be mono sound. 
+                        Stereo sound would not work.                                                                      
+                    </p>
+                    <pre>
+                        <code>
+                        Serial myPort01, myPort02, myPort03, myPort04, myPort05;// Create object from Serial class
+                        int pos01, pos02, pos03, pos04, pos05;// Data received from the serial port
+                        SoundFile player01, player02;
+                        
+                        void setup () {
+                            
+                            size(512, 200);
+                            String portName01 = Serial.list()[4]; // arduino uno 142101
+                            String portName02 = Serial.list()[5]; // lilypad 1 1422101
+                            //String portName03 = Serial.list()[6]; // lilypad 2 1422201
+                            //String portName04 = Serial.list()[7]; // lilypad 1 1422101
+                            //String portName05 = Serial.list()[8]; // lilypad 2 1422201
+                            
+                            //String portName = "/dev/cu.usbmodem1422101"; // check the portname of arduino
+                            myPort01 = new Serial (this, portName01, 9600); // set the com port and the baud rate according to the Arduino IDE
+                            myPort02 = new Serial (this, portName02, 9600);
+                            //myPort04 = new Serial (this, portName04, 9600);
+                        
+                            player01 = new SoundFile(this, "byhmono.wav"); // set sound for squeeze
+                            player02 = new SoundFile(this, "soundmono.wav");// set sound for swing
+                        
+                            // frameRate(30); initial value is 20 fps 
+                        }
+                        </code>
+                        </pre>
+                </div>
+
+                <li class="togglelist"> Play the music with balance </li>
+                <div class="listtext">
+                    <p>
+                        <code>port.available()</code> is used to check whether the port is receiving data from Arduino.
+                        When it is working, then it is the time to read and store it into <code>posN</code>.
+                        When it gets the data, the music file can be played if it is not turned on. 
+                        This piece is to avoid lag music.
+                        <br>
+                        Then next, use <code>map(variable, v1, v2, va, vb)</code> to release the value of <code>Adjust</code>.
+                        For the range of music balance is from -1 to +1, Adjust is mapped to suit into this range.
+                        <br>
+                        The last step, use <code>playerN.pan(AdjustN)</code> to control the music balance!                                                                                          
+                    </p>
+                    <pre>
+                        <code>
+                    void draw () {
+                        if ( myPort01.available() > 0) {  // If data is available,
+                            pos01 = myPort01.read();  // read it and store it in pos
+                            if(!player01.isPlaying()) { 
+                                player01.play();}
+                            float adjust01 = map( float(pos01), 0, 255, -1.0, 1.0);
+                            println("adjust01"); println(adjust01);
+                            player01.pan(adjust01);}
+                            else if ( myPort01.available() <= 0 && player02.isPlaying()){
+                            player01.pause(); }
+                            
+                        if ( myPort02.available() > 0) {  // If data is available,
+                            pos04 = myPort04.read();         // read it and store it in pos
+                            if(!player02.isPlaying()) { 
+                                player02.play();}
+                            float adjust02 = map( float(pos02), 0, 255, -1.0, 1.0);
+                            println("adjust02"); println(adjust02);
+                            player02.pan(adjust02);}  
+                            else if ( myPort02.available() <= 0 && player01.isPlaying()){
+                            player02.pause(); }                                                                          
+                        }
+                        </code>
+                        </pre>
+                </div>
+            </ol>
+           </div>
         </div>
+<!-- ---------------------------------How ball---------------------------- -->
 
         <div id="ball" class="content">
-            <h2 style ="background-color: #f9813a; color: black;";>How did I made the ball?</h2>
-            <p>blabla</p>
+            <h2 style ="background-color: rgb(255, 112, 87); color: black;";>How did I made the ball?</h2>
+        
+            <!-- ---------------------------------How ball sensor---------------------------- -->
+
+            <div id="sensor" class="innercontent">
+                <h3> Enhance the mini sensor</h3>
+                <img src="sketches/material.png" alt="play mat">
+                <img src="sketches/enhance.png" alt="cap the FSR">
+                <img src="sketches/enhance2.png" alt="makes the wires firmer">
+                <h4> </h4>
+                <p>blabla</p>
+
+
+
+            </div>
+            
+            <!-- ---------------------------------How ball outer---------------------------- -->
+
+            <div id="outer" class="innercontent">
+                <h3>Encapsulate the Ball</h3>
+                <img src="sketches/face.png" alt="">
+                <p> </p>
+            </div>
+
+
+
+
+            
         </div>
             
         <div id="material" class="content">
-            <h2 style ="background-color: #f9813a; color: black;">Supported Materials</h2>
+            <h2 style ="background-color: #fc9c89; color: black;">Supported Materials</h2>
             <h3> Journal </h3>
             <!-- <iframe width="80%" height="600"
             src="https://miro.com/app/live-embed/o9J_lTaiX1U=/?moveToViewport=-3167,-1683,12149,3638" 
@@ -195,13 +404,13 @@
     <article id="whycontent" class="contentcontainer" >
         
         <div id="desk" class="content">
-            <h2 style ="background-color: #ffd5cd";>Desk Research</h2>
+            <h2 style ="background-color: #fc9c89; color: black;">Desk Research</h2>
 
             <p>blabla</p>
         </div>
     
         <div id="user" class="content">
-            <h2 style ="background-color: #ffd5cd";>User Research</h2>
+            <h2 style ="background-color: #fc9c89; color: black;">User Research</h2>
             <p>blabla</p>
 
         </div>
