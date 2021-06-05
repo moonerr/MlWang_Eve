@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: interstate, sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  color: rgb(255, 224, 214);
+  margin: 0;
+  background-color: black;
+}
+
+h1 {
+  margin: 0em;
+  /* float: right; */
+  font-size: 2em;
+  font-weight: lighter;
+  background: -webkit-linear-gradient(
+    bottom,
+    rgb(255, 197, 8),
+    rgb(255, 76, 45)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: 600;
+}
+h3 {
+  font-size: 1.4em;
+  font-weight: 500;
+  /* text-align: center; */
+}
+h4 {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+h5 {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+p {
+  font-weight: 100;
+}
+
+/*==================== Style the head ===================*/
+
+header {
+  padding: 5em;
+  /* text-align: center; */
+  background-color: rgb(255, 224, 214);
+  /* color: #fd5d00; */
+}
+
+#logo img {
+  /* width: 5em; */
+  position: relative;
+  float: left;
+}
+
+img:first-child {
+  z-index: 2;
+  top: -1.5em;
+  left: -1em;
+  animation-name: wink;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+}
+
+@keyframes wink {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.icon img:last-child {
+  opacity: 100%;
+  /* top: 1.5em; */
+  left: -7.25em;
+  z-index: 1;
+}
+
+#welcome {
+  position: relative;
+  top: -1em;
+  float: right;
+  text-align: right;
+}
+
+.fa {
+  width: auto;
+  margin: 5px 2px;
+  color: #f9813a;
+  text-decoration: none;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* ============================= Style the menu ==================================*/
+.menubar {
+  position: fixed;
+}
+
+.menubar a {
+  position: absolute;
+  left: -4em;
+  transition: 0.3s;
+  padding: 1em 5em;
+  width: 10em;
+  text-decoration: none;
+  font-size: 20px;
+  color: #1a1c20;
+  border-radius: 0 5px 5px 0;
+  top: 5em;
+}
+
+/* .menu a:hover:not(.active) {
+  left: -2em;
+} */
+a.active,
+.btn:hover {
+  left: -2em;
+}
+
+#what {
+  top: 9em;
+  background-color: #fa6b18;
+}
+
+#why {
+  top: 12.5em;
+  background-color: #f9813a;
+}
+#how {
+  top: 16em;
+  background-color: #ffd5cd;
+}
+#who {
+  top: 19.5em;
+  background-color: #fcf1f1;
+}
+
+/* =================== Responsive the menu ====================================*/
+
+@media screen and (max-width: 700px) {
+  .menubar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .menubar a {
+    float: left;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .menubar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+/* ============================= Style the tab content ======================== */
+
+article {
+  background-color: 1a1c20;
+  width: 90%;
+  float: right;
+  /* border-radius: 5em; */
+}
+
+/* ================================ Style the Ideal of What ============================ */
+
+/* .content {
+  margin-left: 10em;
+  /* display: flex; */
+/* } */
+* sup {
+  color: rgb(248, 128, 106);
+}
+
+article {
+  margin: auto;
+  /* left: 25em; */
+  width: 80%;
+}
+.content {
+  margin: auto;
+  /* margin: 10em 0 20em 0; */
+}
+
+.innercontent {
+  margin: 10em 0;
+}
+
+#sketch1 {
+  width: 40em;
+  float: right;
+  margin: 0 2em;
+  top: -5em;
+}
