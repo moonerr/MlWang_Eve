@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mengling's Portfolio</title>
     <script src="libraries/p5.js"></script>
     <script src="libraries/p5.sound.js"></script>
@@ -12,16 +13,18 @@
 </head>
 <body>
     <header>
+        <div class="greeting" > Welcome to Stressless Galaxy</div>
         <div id="logo" class="icon">
-            <img  src="icons\logo\F1.png" alt="logo" style="opacity: 100%;width: 100px;">
-            <img  src="icons\logo\F2.png" alt="logo" style="opacity: 100%;width: 100px;">
+            <img  src="icons\logo\F1.png" alt="logo" >
+            <img  src="icons\logo\F2.png" alt="logo" >
             
         </div>
-        <div id="welcome">
+        
+        <div class="welcome">
             <h1>Hi, I'm Mengling</h1>
             <a href="https://www.instagram.com/ningnei_11/" class="fa fa-instagram" target="popup"></a>
             <a href="https://www.linkedin.com/in/menglingwang/" class="fa fa-linkedin" target="popup" ></a>
-            
+            <br>
         </div>
         
         
@@ -33,7 +36,7 @@
         <a href="#whatcontent" id="what" class="btn active">What</a>
         <a href="#howcontent" id="how" class="btn">How</a>
         <a href="#whycontent"id="why"class="btn">Why</a>
-        <a href="#whocontent" id="who"class="btn">Who</a>
+        <a href="#whocontent" id="who"class="btn">Reflec.</a>
     </div>
     
 <!-- --------------------------------- What ---------------------------- -->
@@ -42,7 +45,7 @@
     <article id="whatcontent" class="contentcontainer" >
         <!-- <div id="ideal"> -->
         <div id="ideal" class="content">
-            <h2 style ="background-color: rgb(255, 94, 65); color: black;";>The 'Ideal'</h2>
+            <h2 >The 'Ideal'</h2>
             <div id="problemstatement" class="innercontent">
                 <img id="sketch1" src="sketches/stressed.png" alt="a stressed person" >
 
@@ -54,7 +57,6 @@
                     We focus on young adults who feel stressed out in their lives and want to escape for a moment.
                 </p>
                 
-                <p class="quoate" id="quote1" style="display: none;"><span class="intextcite">(1)</span> Higher levels of stress lower the levels of happiness in people. (Schiffrin & Nelson, 2008)</p>
                 
                 <h4># Individual perspective</h4>
                 
@@ -68,11 +70,6 @@
                     We definitely could make some changes to the environment just for people to relieve themselves.
                 </p>
 
-                <p class="quote" id="quote2" style="display: none;">
-                    (2) Figure 4: The cognitive appraisal model which indicates the generation of stress (Lazarus &Folkman, 1984),
-                    source from the Internet (Guttmann, 2016)
-                </p>
-
                 <p>
                     <span>? Why young adults </span>
                     <br>As a semester project, we are supposed to build one prototype to demonstrate our concepts. Even though we found being stressful can occur to anyone,
@@ -80,8 +77,15 @@
                     We choose young adults, not only for they are facing much stress and also for it is more accessible for us to observe their
                     pressure and talk with them about their emotions. And also, we will be more capable of understanding and sharing feelings with this group.
                 </p>
+
+                <p class="quoate" id="quote1" style="display: inherit;">
+                    <span class="intextcite">(1)</span> Higher levels of stress lower the levels of happiness in people. (Schiffrin & Nelson, 2008)
+                    <br>
+                    (2) Figure 4: The cognitive appraisal model which indicates the generation of stress (Lazarus &Folkman, 1984),
+                    source from the Internet (Guttmann, 2016)
+                </p>
             </div>
-            <div id="intentedconcept" class="inercontent">
+            <div id="intentedconcept" class="innercontent">
             <h3 ><span style="font-style:normal">&#127773;</span> Intended Concept</h3>
 
             <p>
@@ -91,20 +95,26 @@
                 When someone is entering, this space begins to work. Users can set the brightness of the whole to suit them best. 
                 The entire area has a cylindrical shape with a soft floor and round wall. 
                 <br>    
-                
                 They could stand, sit or lie down; with either posture, they could find their way to throw, squeeze, slap the ball-shaped bodies(planets) 
                 to generate multiple changes to this space.  These changes include vibration, colours, surrounding sound.
-                
+                <br>
+                It is a room without intructions and what needs to be done. Just a set of various interactions for people to explore.
+                <br>
                 And with the interactive process, everyone could get their stress released by multi-sensory therapy. 
 
             </p>
             <br>
             <p style="color: rgb(255, 112, 87);">
-                Play it online: move your cursor within the space and hear the sound moving 
+                <b>Play it online</b>
+                <br>
+                Move your cursor within the space and hear the sound moving 
                 between ears(headphone recommended).
-                The numbers shows where the sound is between the two channels. 
+                The numbers shows where the sound is moving. 
                 Ideally in the physical space, there should be a set of speakers that surround the space and the sound moves arround the user.
             </p>
+            <button class="game off" onclick="musicSwitch()">Play the Music</button>
+            <p>Note: Waite for a few seconds if the button does not work. The music needs some time to load.</p>
+
             <main>
                 <!-- <img src="sketches/wholesence.jpg" alt="Ideal sketches"  id="idealsketch" style="width: 640px; height: 360px;"> -->
                 <!-- <canvas id="defaultCanvas0" class = "p5Canvas" data-hidden="true"  style="display: none; width: 640px; height: 360px; cursor: pointer;"> -->
@@ -119,9 +129,7 @@
         <div id="actual" class="content">
             <h2 style ="background-color: rgb(255, 94, 65);color: black;">The 'Actual'</h2>
             <div id="actualcontent" class="content">
-                <!-- <iframe width="1213" height="692" src="https://www.youtube.com/embed/HSSMKvYEqzA"  
-                frameborder="0" allowfullscreen></iframe>    -->
-            </div>
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/u4bPO7sUEl4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            </div>
 
         </div>
 
@@ -180,8 +188,7 @@
                     </div>
                     
                 </ol>
-                    
-                <p></p>
+                
             </div>
 
         <!-- ---------------------------------software---------------------------- -->
@@ -354,41 +361,164 @@
                         </code>
                         </pre>
                 </div>
+
             </ol>
+
+            <div class="innercontent">
+                <h3>Results</h3>
+                <br>
+                <video src="videos/soundtest.mp4" controls></video>
+                <br>
+                <p>
+                    <br>
+                    When the user squeezes FSR, the VMs begin to work.
+                    <br> 
+                    The frequency of each VM is changing with the force applied.
+                    <br>
+                    Simultaneously, processing copes with the force values and
+                    reveals the changes by moving the sound between two channels.
+                    Then console prints the value of <code>balance</code> every frame.
+                                        It works well!
+                </p>
+            </div>
+
            </div>
         </div>
 <!-- ---------------------------------How ball---------------------------- -->
 
-        <div id="ball" class="content">
-            <h2 style ="background-color: rgb(255, 112, 87); color: black;";>How did I made the ball?</h2>
-        
-            <!-- ---------------------------------How ball sensor---------------------------- -->
+    <div id="ball" class="content">
+        <h2 style ="background-color: rgb(255, 112, 87); color: black;";>How did I made the ball?</h2>
+    
+        <!-- ---------------------------------How ball sensor---------------------------- -->
 
-            <div id="sensor" class="innercontent">
-                <h3> Enhance the mini sensor</h3>
-                <img src="sketches/material.png" alt="play mat">
-                <img src="sketches/enhance.png" alt="cap the FSR">
-                <img src="sketches/enhance2.png" alt="makes the wires firmer">
-                <h4> </h4>
-                <p>blabla</p>
-
-
-
+        <div id="sensor" class="innercontent">
+            <h3> Enhance the mini sensor</h3>
+            <!-- <img src="sketches/material.png" alt="play mat">
+            <img src="sketches/enhance.png" alt="cap the FSR">
+            <img src="sketches/enhance2.png" alt="makes the wires firmer"> -->
+            <div class="sect">
+                <h4># Fix the Force Sensitive Resistor </h4>   
+                <img class="sketch enhanceall"
+                src="sketches/enhanceall.png" alt="wrap FSR">                
+                <p>
+                    The FSR is only one 2 AUD coin-sized.
+                    To expand the contact surface, I get a good idea from Lorna.
+                    <br>
+                    The foam of the playmat is an attractive choice to wrap the sensor,
+                    for it is solid but relatively resilient.
+                    It will fix and protect the sensor and give a bigger contact surface for each ball.
+                    
+                </p>
+                <video src="videos/foam.mp4" controls></video>
+                <p>
+                    The video shows how soft foam works in resilience but lacks solid support.
+                    It would be easy to damage the sensor if users squeeze the sensor at an inappropriate angle.
+                </p>
+                
+                
+                
             </div>
-            
-            <!-- ---------------------------------How ball outer---------------------------- -->
-
-            <div id="outer" class="innercontent">
-                <h3>Encapsulate the Ball</h3>
-                <img src="sketches/face.png" alt="">
-                <p> </p>
+            <div class="sect">
+                <h4># Fix the Micro Vibrating Motor</h4>
+                <p>And the vibrating motor (VM) is even more fragile for its far thinner wires.
+                But thanks to the self-adjusting wire stripper,
+                I did not cut the wire anymore. Tools are great!
+                </p>
+                <img class="sketch enhanceall2"
+                src="sketches/enhanceall2.png" alt="fix the motor">
+                <p>
+                I first dig a VM-shaped hole in the cut foam piece to fix the VM because VM is a bit thick
+                if we put two pieces together directly.
+                And then adhere them all to make it a core for the ball.
+                <br>
+                The foam pieces are tailored to a fist big to suit users' hand size. 
+                The secondary layer will be smaller to make the whole a ball shape.
+                </p>
             </div>
-
-
-
-
-            
         </div>
+        
+        <!-- ---------------------------------How ball outer---------------------------- -->
+
+        <div id="outer" class="innercontent">
+            <h3>Encapsulate the Ball</h3>
+            <div class="sect">
+                <h4># Wrap with sponge</h4>
+                <div class="gallary">
+                    <img src="images/lights.jpeg" alt="A foam that allows lights to go through itself">
+                    <img src="images/scraft.jpeg" alt="tools">
+                    <img src="images/cotton.jpeg" alt="inside material">
+                </div>
+                <p>After making the core ready, it's time to wrap it up.
+                    The sponge we decided on has been tested that it can allow the lights to get through.
+                    Then to wrap the core, I tailored two oval pieces of sponge and sewed them as a pocket.
+                    My hands are always full so that there are not many pictures left,
+                    but I could show you how I sewed it from an oval flat pocket into a ball shape.
+                </p>
+                <img src="sketches/wrap.png" alt="the process of wrapping the ball with sponge">
+                <p>I got inspiration from the method of making a globe.</p>
+                    <ol>
+                        <li>
+                            I first cut out a plane map of the earth. The length of this plane is the circumference of the target sphere, and the width is half of the circumference.
+                            Then divide it into four equal parts.
+                        </li>
+                
+                        <li>First, stitch out the symmetrical sides.</li>
+                
+                        <li>Then there is the back.</li>
+                
+                        <li>Then turn it inside out.
+                            Put in the core part and fill cotton at both ends in the direction of pressing.
+                            Finally, stitch the last edge.</li>
+                    </ol>
+            </div>
+            
+            <div class="sect">
+                <h4># Wrap with cloth</h4>
+                <img style="width:20%;float: left; margin-right:4em;" src="images/ballon.JPG" alt="wrapped by ballon"  >
+
+                <p style="width: 60%; margin: auto;">
+                    <br>
+                    <br>
+                    <br>
+                    One time I tried to wrap them with balloons, but it affected the value of FSR,
+                    and then I adjust the mapping of it. But it still did not work well on the spot.
+                    If only I could get a larger one, I think it would be working in some way.</p>
+                <br>
+                <br>
+
+                    <p>
+                    Coming to the use of cloth, it is very similar to using a sponge.
+                    But because it is the outermost layer, very delicate handwork is required.
+                </p>
+
+                    <img class="sketch face"
+                    src="sketches/face.png" alt="Slice the cloth into 4 pedal-shaped pieces">
+
+                    <p>
+                    
+                    <br>
+                    First, cut out two circles from paper.
+                    The diameter of the circle is 3/2 that of the target ball.
+                    And then cut out the overlayed part of the circle and make it a bare board.
+                    <br>
+                    Then outlines the shapes of the board on the cloth and cut them out of 4 pieces.
+                    <br>
+                    The fabric is very elastic, verified by my teammates that sewing machines would not help.
+                    <br>
+                    So I, a craftsman,  sew two and a half cloth covers.
+                    To make it look best,  I sewed the four pieces of cloth into a spherical
+                    shape by the hidden needle stitching method.
+                    <br>
+                    After finishing wrapping, they are sent to be coloured.
+                    I coloured one ball with acrylic paint. It needs to be diluted to a particular
+                    concentration not to affect the light transmittance.
+
+
+                </p>
+            </div>
+        </div>
+
+    </div>
             
         
     </article>    
@@ -400,34 +530,543 @@
         <div id="desk" class="content">
             <h2 style ="background-color: #fc9c89; color: black;">Desk Research</h2>
 
-            <p>blabla</p>
+            <div id="brief" class="innercontent">
+                <h3>Back to Brief</h3>
+                <ol class="listcontainer">
+                    <li class="togglelist"> Future Mundane</li>
+                    <div class="listtext">
+                        <p>
+                            It is about what human can do every day in the future and how they do with the design/concept.
+                                Technologies evolve, aligned with human needs which are less likely to change drastically.
+                                And 'human' here is refering to all 'background talents',
+                                who are the masses living and working in the future.
+                        </p>
+                        
+                        <p><b>About Accertive</b></p>
+                    
+                        <p>
+                            "Design Fiction helps makes futures
+                            real through the production of diegetic prototypes(objects which display narrative attributes
+                            of the world they come from)"
+                        </p>
+                        <p> 
+                            Being accertive, from my understanding, is to show clues from this modern world. 
+                            It probably means to create productions other than brand-new needs. 
+                            It has the basis that technologies evolve gradually. What people do might not change a lot, 
+                            but how they make it will differentiate. Like in the future, people will still have to gain 
+                            knowledge, different from reading books now, but can be made in other ways.
+                        </p>
+                        <p><b>About futures-extendency</b></p>
+                        <p>
+                            The extendency can be linked to human needs or a typical technology. 
+                            For instance, self-parking is a foundamental tech in auto-drive vehicles. 
+                            And Nissan applies it into daily life items: chairs and slippers, 
+                            or any other items you wanted them to be placed orderly with little effort. 
+                            It has the context both socially and humanly and makes itself extended in various contexts, 
+                            or in other words, in the (possible/plausible/probable) futures.
+                            
+                        </p>
+                        
+                        <p><b>Design for future problems</b></p>
+                       
+                        <p>Stay optimistic but also calm. Underlying global problems patching through time, 
+                            and we might have to maintain a sight for that and do some foresee designs in advance.</p>
+                        
+                    </div>
+                    
+                    <li class="togglelist"> Playful</li>
+                    <div class="listtext">
+                        <img src="sketches/playful.png" alt="mindmap for playful" style="width: 100%;">
+                    </div>
+                    <li class="togglelist"> physical </li>
+                    <div class="listtext">
+                        <img src="sketches/physical.png" alt="mindmap for physical" style="width:100%;">
+                    </div>
+
+                    <li class="togglelist"> Key insights from Brainstorming</li>
+                    <div class="listtext">
+                        <p> From the brainstorming stage, I could read some values beneath, on a digital-tech novelised basis. 
+                            These are what we would like to get from the future (not inclusive):
+                        </p>
+                        <p>
+                            - trust
+                            - company
+                            - desire to be more powerful and skilful
+                            - Inner peace
+                            - more creativity
+                        </p>
+
+                        <p>And also, being playful can be enhaced by both input and output.</p>
+                        
+                        <img width="100%" src="sketches/insight.png" alt="insights from Brainstorming">
+
+                        <p><b>Strengthen</b></p>
+                            <p>
+                                Jumping, shooting is originally playful in today's life,
+                                augmenting the experience by adding more fantastic effects on it.
+                            </p>
+                            <p><b>Complementary</b></p>
+                            <p>
+                                The feedback makes the interaction more playful as it responds in an unexpected way. 
+                                Give daily routine fantasy feedback is another way to get through.
+                            </p>
+                    </div>
+                    
+                </ol>
+            </div>
+
+            <div id="cause" class="innercontent">
+                <h3>Design for the stressed</h3>
+
+                <ol class="listcontainer">
+                    <li class="togglelist">What is stress?</li>
+                    <div class="listtext">
+                        <p>Stress that cannot be digested is considered harmful and happens anytime and anywhere.</p>
+                        <p>
+                            With three assignments due in a week,  we feel it.
+                        </p>
+                        <p>
+                            Being losing money for one month, we sense it.
+                        </p>
+                        <p>
+                            When the project is due tomorrow, but countless bugs are found, we are caught by it.
+                        </p>
+                        <p>Previous researchers have helped us understand that stress arises from individuals 
+                            who estimate insufficient resources to solve the current dilemma. 
+                            This is closely related to the pressure exerted by the environment on people 
+                            and depends on the individual's emotional management ability.
+                            
+                        </p>
+                    </div>
+                    <li class="togglelist">What works to cope with it?</li>
+                    <div class="listtext">
+                        <p>
+                            Positive emotions can help adapt stress level by sustaining coping efforts, providing a “breather,”
+                            and restoring depleted resources.(Folkman & Moskowitz, 2000; LAZARUS et al., 1980)
+                        </p>
+                        <p>
+                            Positive emotions can be generated in three ways: Positive Reappraisal, Problem-Focused Coping methods,
+                            and Creation of Positive Events. (Folkman & Moskowitz, 2000)
+                        </p>
+                        <p>'Multisensory therapy' is a prooved treatment, making the users stay in a private room and 
+                            exposed to interactions with feedback in various senses. 
+                            It also has another name, 'snoezelen' in Dutch, which combines the 'explore' and 'relax'.  </p>
+                        <p>
+                            It would be a fantastic realm to explore as it gives me opportunities to break the everyday mundane at present. 
+                            From an elementary observation, people use eyes too often and with noise from the automobile all around the street.
+                            There is much that can be done to reverse the stressful reality in one cozy space.
+                        </p>
+                    </div>
+
+                    <li class="togglelist">Related Work</li>
+                    <div class="listtext">
+                       
+                        <div class="gallary">
+                            <img src="images/r1.png" alt="Related fidget toys">
+                            <img src="images/r2.jpg" alt="Related antique walnuts">
+                            <img src="images/r4.png" alt="Related hug toys">
+                            
+                        </div>
+                        <p>
+                            <b>Fidget toys</b> are popular among young adults, 
+                            and it gives them a way to ventilate the stress. 
+                            Not only soft toys are welcomes. People in China are fond of playing antique walnuts in hand and roll them infinitely. 
+                            The simple way of playing could distract people's attention from stressful stuff thus get relaxed(18 Fidget Toys for Anxiety, 2021).
+                            Distraction that shuts down one emotion (Verduyn et al., 2015).
+                            
+                        </p>
+                        
+                        <div class="gallary">
+                            <img src="images/r3.jpg" alt="Related massage gun">
+                            <img src="images/r5.jpg" alt="Related galaxy">
+                            <img src="images/r6.png" alt="Related 3D sound">
+                        </div>
+
+                        <p>The <b>massage gun</b> provides a way to relax the muscles. 
+                            When people are nervous or after sitting for a long time, 
+                            their muscles tend to be tight. 
+                            The constant touchable vibration relaxes the muscles and improves mood 
+                            because real life tells us that very few people lose their temper 
+                            when being massaged.</p>
+
+                        <p><b>Galaxy Exhibition</b>: Musical pieces are played throughout the 
+                            venue that change in sequence depending on where the audience member is standing.(Galaxy of Records, 2017)
+                            </p>
+
+                        <p> Multi-sensory Exposure Therapy, which uses 3D Visualisation, <b>Surround Sound</b>, 
+                            and Synthesised Music can help anxiety healing. (Argo et al., 2014)
+                        </p>
+                    </div>
+            
+                </ol>
+                
+                
+            </div>
+
+            <div id="guide" class="innercontent">
+                <h3>Design Guidelines</h3>
+                <ol class="listcontainer">
+                    <li class="togglelist">Behavioural Design</li>
+                    <div class="listtext">
+                        <p>According to Dornald A. Norman, behavioural design reveals the part of brain which controls human's behaviours.</p>
+                        <p><b>Venting Behaviour</b></p>
+                        <ul>
+                            <li>Freud (1955) proposed the principle of constancy, 
+                                When we feel stressed, the quantity of excitation increases, 
+                                but our body wants us to decrease it, 
+                                which leads us to seeking a way to vent emotions.</li>
+                            <li>
+                                Shock, anger, fear, nervousness... these emotions are all high arousal emotions, 
+                                ... It increases blood pressure and heart rate, alerts our sensory system, 
+                                and also helps us become ready to make response
+                            </li>
+                            <li>
+                                Our brain can’t afford long term stress because keeping long, 
+                                term high arousal increases the burden of blood vessels in the brain.
+                            </li>
+                            <li>
+                                <b>Venting</b> can make people feel better and calm after doing it
+                            </li>
+                            
+                        </ul>
+                        <p><b>Fidget Behaviour</b></p>
+                        <ul>
+                            <li>Fidgeting is defined as the restless act of moving that 
+                                is not necessary to ongoing events or tasks
+                            </li>
+                            <li>
+                                fidgeting distracts the part of our brain that has become unpleasant 
+                                so other parts can pay attention to what we are doing.
+                            </li>
+                        </ul>
+                        <br>
+                        <br>
+                    </div>
+                    <li class="togglelist">Emotional Design</li>
+
+                    <div class="listtext">
+                        <p>Emotional level reveals how people feel about it. 
+                            To cope with stress, we need to know what causes happiness.
+                        </p>
+                        <p><b>The Assumtions about Shapes and Froms</b></p>
+                        <ul>
+                            <li>triangle is stable.</li>
+                                <li>square is solemn</li>
+                                <li>circle is perfect</li>
+                                <li>geometric shape is simple and cold</li>
+                                <li>curves remind us freedom and nature</li>
+                                <li>The combination of different shapes gives people more emotional experiences</li>
+                        </ul>
+
+                        <p><b>Smooth Curve</b></p>
+                        <ul>
+                            <ul>straight lines with angles are widely used to describe angry, exciting and agitation.</ul>
+                            <li>On the contrary, curvy lines express grace and are usually pleasant, in Lundholm (1921)’s experiment</li>
+                            <li>adding smooth curvy line elements</li>
+                        </ul>
+
+                        <p><b>Colours</b></p>
+                        <ul>
+                            <li>higher color saturation also makes people feel more excited and human arousal 
+                                increased when hue changed: the order is from blue and green to red</li>
+                        <li>have more than three colors, too many colors will give people a “busy” feeling</li>
+                        </ul>
+
+                        <p><b>Cuteness</b></p>
+                        <ul>
+                            <li>animals, plants and infants as inspirations</li>
+                                <li>
+                                    the concept <b>“baby schema”</b>- a set of infantile physical features such as large head,
+                                    high and protruding forehead, large eyes, chubby cheeks, small nose and mouth,
+                                    short and thick extremities and plump body shape,
+                                    such as “Pikachu” and “Mickey Mouse”
+                                </li>
+                                <li><b>“cute aggression”</b> which refers to an aggressive behavior caused by seeing something cute --- 
+                                    People experiencing this may grit their teeth, clench their fists or feel the desire of <b>squeezing</b> the thing 
+                                    what they consider is cute without the intention of actually causing any harm</li>
+
+                        </ul>
+                        <br>
+                        <br>
+
+                    </div>
+
+                </ol>
+
+                
+            </div>
+
+            <div id="paper" class="innercontent">
+                <h3>Research Source</h3>
+                <object width="80%" height="600"  data="related/guide.pdf" type="application/pdf">
+                    <embed src="related/guide.pdf" type="application/pdf" />
+                </object>
+            </div>
+            
         </div>
     
         <div id="user" class="content">
-            <h2 style ="background-color: #fc9c89; color: black;">User Research</h2>
-            <p>blabla</p>
+            <h2 style ="background-color: #fc9c89; color: black;">Key Stages of Design lifecycle</h2>
+            
+            
+            <div id="interview" class="innercontent"> 
+                <h3>User Research During Empathy and Ideation</h3>
+                <img width="80%" style="margin-bottom: 2em ;"
+                src="images/u1.png" alt="User interview results">
+                <p><b>Key insights</b></p>
+                <ul>
+                    <li>
+                        People tend to avoid complaining which would stacks the unhappy things in mind.
+                        Many People tend to cope with negative feelings by themselves, which <b style="color: rgb(255, 112, 87);">justifies creating a private space</b>.                </li>
+                    <li>
+                        People wanted to look their best and hide the nagative side of emotions which increases peer stress. 
+                        It reveals <b style="color: rgb(255, 112, 87);">the possiblity to be sociable</b>.  
+                    </li>
+                    <li>
+                        Time is a resource that is often deficient for people who are working. 
+                        They have to spend more time on tough stuff if there is a stuck, which causes them to overlook their stress.
+                    </li>
+    
+                </ul>
+
+            </div>
+
+
+            <div id="feedback" class="innercontent"> 
+                <h3>Feedback Received during Stage of Prototyping</h3>
+                
+                <div class="sect">
+                    <h4># Prototype Info</h4>
+                    <object width="80%" height="600"  data="projectfiles/Prs.pdf" type="application/pdf">
+                        <embed src="projectfiles/Prs.pdf" type="application/pdf" />
+                    </object>
+                    <h4>Feedback from Other Teams</h4>
+                    <img style="width: 80%;"
+                    src="images/f1.png" alt="Feedback from other teams">
+
+                </div>
+
+                <p><b>Key insights & Reflection</b></p>
+                <ul>
+                    <li>   <b>'Galaxy' </b>is an imaginative theme that often makes people think of hugeness and distance.
+                        We received much feedback that we should increase the number of planets. 
+                        So in the final exhibition, we made seven balls hanging in the space. 
+                        But it turns out that many things should be placed in an ample space as well. 
+                        It turns out that when we think of the galaxies, we recall not only the numerous stars but also the spaciousness it has.
+                    </li>
+                    <li>
+                        The swings interaction confuses people that they should not like to hold the ball carefully to 
+                        experience the surround sound. It is a vigilant interaction, not recommended for people's vent. 
+                        It is also caused by technical issues partially. If the ball is hanging with a rope, it will swing quite fast. 
+                        Unless we formed some structures that allow slow swing, then it will not be that desirable. 
+                    </li>
+                    <li>
+                        From the feedback, I came to believe everyone has their framing of stress. Someone might feel difficult to sleep 
+                        because of pressure. Someone might want to chill at home to release the tension. 
+                        Among all those, we came to the reason why there should be one at public places. 
+                        Working people, often young, usually spend 8 to 10 hours a day at the workplace, which occupies 1/3 of the whole day, 
+                        even more than their sleeping time. 
+                        If sleeping should be paid attention to, it seems reasonable to consider improving the experience during workdays.
+                    </li>
+    
+                </ul>
+
+            </div>
 
         </div>
 
-        <div id="material" class="content">
-            <h2 style ="background-color: #fc9c89; color: black;">Supported Materials</h2>
-            <h3> Journal </h3>
-            <!-- <iframe width="80%" height="600"
-            src="https://miro.com/app/live-embed/o9J_lTaiX1U=/?moveToViewport=-3167,-1683,12149,3638" 
-            frameBorder="0" scrolling="no" allowFullScreen></iframe> -->
-            <h3> Related Work</h3>
-            <object width="80%" height="600"  data="related/guide.pdf" type="application/pdf">
-                <embed src="related/guide.pdf" type="application/pdf" />
-            </object>
-            <p>blabla</p>
-        </div>
+
 
     </article>
 
 <!-- --------------------------------- Who ----------------------------------->
 
     <article id="whocontent" class="contentcontainer" >
+        <div id="reflection" class="content">
+            <h2 style ="background-color: #fdd9d2; color: black;">Reflection </h2>
+            
+            <div class="innercontent" id="Reflection">
+                <h3>Criteria for Team Project</h3>
+                <img src="images/c.png" alt="Criterias for team project">
+                <p>Inspired by the information of BlackBoard, I developped this matrix. </p>
 
+                <ol class="listcontainer">
+                    <li class="togglelist">Project Delivery:  0.5 + 0.5 + 0.5 + 0.5 + 0.5</li>
+                    <div class="listtext">
+                        <!-- ------------------------Fit the Purpose: 0.5-------------------------------- -->
+
+                        <h4>Fit the Purpose of Stress Relief: 0.5 </h4>
+                        <p> Successful Parts:
+                            <br>
+                            - Intuitive interaction of tapping to change the lights
+                            - Various balls to fits into different sizes of people, allows squeezing and hugging to ventilate
+                            - Beatiful decoration with little disrubtion
+                            - Suitable concentration of lavender scent with no adverse effects found 
+                        </p>
+                        <p> Unsuccessful Parts:
+                            <br>
+                            - Tapping to play the surround sound does not working
+                            - Little identifiers are used to guide people to explore the space
+                            - Speakers are bit few for people to feel the sound is surroung them
+                        </p>
+
+                        <!-- -------------------------Emotional Design: 0.5------------------------------- -->
+                        <h4>Emotional Design/Brings Positive Emotions: 0.5</h4>
+                        <p>
+                            Successful Parts:
+                            - Based on previous research, we work to the best of the experience as we could imagine
+                        </p>
+                        <p>
+                            Unsuccessful Parts:
+                            - For some design patterns, we could not draw a team-based decision because of technical limitations. 
+                            In this part, we need more information about user senarios to frame our concept. More work is needed here.
+                        </p>
+                        <!-- -------------------------Fun: Recreation sensations: 1------------------------------- -->
+                        <h4>Fun/Recreating Sensations: 0.5 & Creativity: 0.5 </h4>
+
+                        <p>
+                            Successful Parts:
+                            - We heard several 'WOW's during the exhibition, with complements on the aethetic Parts
+                            - Sound channel switch has a good feedback from various people with comments as 'cool'
+                        </p>
+
+
+                        <!-- -------------------------Build 0.5 ------------------------------- -->
+                        <h4>Build: 0.5</h4>
+
+                        <p>
+                            Successful Parts:
+                            - Each piece of code works for the project
+                            - Bugs could be debugged quickly with the help of tutors &#128125;
+                        </p>
+                        <p>
+                            Unsuccessful Parts:
+                            - lack the knowledge of construction and the final construction of the space is tough
+                            - Could have the 'slow swing' work if we know more about mechinery
+                        </p>
+                        
+
+
+                    </div>
+                    <li class="togglelist">Design Process:  0.5 + 0.5 </li>
+                    <div class="listtext">
+                         <!-- -------------------------Reseanability 0.5 ------------------------------- -->
+                         <h4>Reseaonability: 0.5</h4>
+
+                         <p>
+                             Successful Parts:
+                             - Surround sound therapy could help release stress
+                             - Lavender is suitable for relaxing
+                             - Hug is healing
+                             - Squeezing is prooved to make people feel better during stressful event.
+                             - multiple sensory therepy is prooved to be a treatment to anxiety.
+                         </p>
+                         <p>
+                             Unsuccessful Parts:
+                             - It is not very clear that the frequncy of the vibrating is suitable for de-stressing. We only know the massage gun is awsome. 
+                             - Maybe too many colors in the space that looks very busy, but it is hard to balance the dazzeling and the boring.
+                         </p>
+
+                        <!-- ------------------------- Criticality: 0.5 ------------------------------- -->
+                        <h4>Criticality: 0.5</h4>
+
+                        <p>
+                            Successful Parts:
+                            - We increased the size of the space according to the feedback from other teams
+                            - We diversified the balls in the space to make it more explorable accordingly
+                            - We have this idea by the reflection of modern life that drives people stressed.
+                            We are trying to give an answer for the living enviroment we will have in the furute
+                        </p>
+                        <p>
+                            Unsuccessful Parts:
+                            - Still needs to have a more detailed user senario to manage all the design requirements
+                        </p>
+
+                    </div>
+
+                    <li class="togglelist">Team Collabration:  0.5 + -1</li>
+                    <div class="listtext">
+                        <!-- -------------------------Effectivity ------------------------------- -->
+                        <h4>Effectivity 0.5 </h4>
+                        <p>
+                            Successful Parts:
+                            - Meeting with agenda
+                            - Effectively use Collabrative online tools to make co-designs
+                        </p>
+
+                        <p>
+                            Unsuccessful Parts:
+                            - Meetings are not arranged in a regular basis
+                            - Too much waiting time for members to gather together
+                            
+                        </p>
+                         <!-- -------------------------Punctuality ------------------------------- -->
+                         <h4>Punctuality: -1</h4>
+
+                         <p>
+                             Unsuccessful Parts:
+                             - As the old saying goes, the time you spent on your project is twice that of you estimated.
+                             It is true true. We kepted behind schedules. Even applies the method of 'working from end', 
+                             time estimation is still tought. It also reveals little risk management during this project.
+                              
+                             My solution to this issue is to seprate individual tasks and team tasks. 
+                             Reducing waiting time of other teammates would release each member to finish more work. 
+                             So, reducing one-to-one talk in a team meeting is a way.
+                         </p>
+
+                    </div>
+
+
+                    <h4 >Overal Marks: 3/10 </h4>
+
+            
+                </ol>
+
+            </div>
+            
+
+        </div>
+
+        <div id="material" class="content">
+            <h2 style ="background-color: #fdd9d2; color: black;">Supported Materials</h2>
+
+            <div id="proposal" class="innercontent">
+                <h3>Project Files</h3>
+                <div class="gallary" id="projectfiles">
+
+
+                    <object width="90%" height="500"  data="projectfiles/proposal_TeamMami.pdf" type="application/pdf" allowFullScreen>
+                        <embed src="projectfiles/proposal_TeamMami.pdf" type="application/pdf" />
+                    </object>
+
+                    <object width="90%" height="500"  data="projectfiles/Emotional Ventilation.pptx.pdf" type="application/pdf" allowFullScreen>
+                        <embed src="projectfiles/Emotional Ventilation.pptx.pdf" type="application/pdf" />
+                    </object>
+
+                    <object width="90%" height="500"  data="projectfiles/Prototype_Team MAMI.pptx.pdf" type="application/pdf" allowFullScreen>
+                        <embed src="projectfiles/Prototype_Team MAMI.pptx.pdf" type="application/pdf" />
+                    </object>
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="innercontent">
+                <h3> My Journal </h3>
+                <iframe width="90%" height="600"
+                src="https://miro.com/app/live-embed/o9J_lTaiX1U=/?moveToViewport=-3167,-1683,12149,3638" 
+                frameBorder="0" scrolling="no" allowFullScreen></iframe>
+            </div>
+            
+
+            
+            
+            
+        </div>
     </article>
 
 

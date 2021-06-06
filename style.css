@@ -34,37 +34,55 @@ h3 {
   font-weight: 500;
   /* text-align: center; */
   color: rgb(255, 112, 87);
+  margin: 2em 0;
 }
 h4 {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: 400;
+  margin-top: 2em;
 }
 h5 {
   font-size: 1.2em;
   font-weight: 300;
 }
 p {
+  font-size: 1.2em;
+  font-weight: 100;
+  margin: 0 0 4em 0;
+}
+li {
+  font-size: 1.2em;
   font-weight: 100;
 }
-
 /*==================== Style the head ===================*/
 
 header {
-  padding: 5em;
+  padding: 5em 3em;
   /* text-align: center; */
   background-color: rgb(255, 224, 214);
   /* color: #fd5d00; */
+  margin-bottom: 2em;
+}
+
+.greeting {
+  font-size: 4em;
+  color: black;
+  margin: 0 0.5em 0 2.5em;
 }
 
 #logo img {
   /* width: 5em; */
   position: relative;
   float: left;
+  opacity: 100%;
+  width: 100px;
 }
 
 img:first-child {
   z-index: 2;
-  top: -1.5em;
+  /* top: -1.5em; */
+  /* before adding greetings */
+  top: -4em;
   left: -1em;
   animation-name: wink;
   animation-duration: 0.5s;
@@ -83,15 +101,17 @@ img:first-child {
 .icon img:last-child {
   opacity: 100%;
   /* top: 1.5em; */
+  top: -2.5em;
   left: -7.25em;
   z-index: 1;
 }
 
-#welcome {
+.welcome {
   position: relative;
-  top: -1em;
+  top: 1em;
   float: right;
   text-align: right;
+  margin-bottom: 2em;
 }
 
 .fa {
@@ -120,6 +140,7 @@ img:first-child {
   color: #1a1c20;
   border-radius: 0 5px 5px 0;
   top: 5em;
+  font-weight: 500;
 }
 
 /* .menu a:hover:not(.active) {
@@ -149,35 +170,14 @@ a.active,
   background-color: #fdd9d2;
 }
 
-/* =================== Responsive the menu ====================================*/
-
-@media screen and (max-width: 700px) {
-  .menubar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-
-  .menubar a {
-    float: left;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .menubar a {
-    text-align: center;
-    float: none;
-  }
-}
-
 /* ============================= Style the tab content ======================== */
 
-article {
-  background-color: 1a1c20;
+/* article {
+  background-color: #000000;
   width: 90%;
   float: right;
-  /* border-radius: 5em; */
-}
+  border-radius: 5em;
+} */
 
 /* ================================ Style the Ideal of What ============================ */
 
@@ -190,7 +190,7 @@ article {
 }
 
 article {
-  margin: auto;
+  float: right;
   /* left: 25em; */
   width: 80%;
 }
@@ -200,6 +200,7 @@ article {
 
 .innercontent {
   margin: 10em 0;
+  width: 80%;
 }
 
 #sketch1 {
@@ -209,10 +210,31 @@ article {
   top: -5em;
 }
 
+.game {
+  padding: 1em 3em;
+  font-size: 1.3em;
+  margin: 1em 1em;
+  border-width: 0;
+  border-radius: 0.5em;
+  font-weight: 500;
+  cursor: pointer;
+}
+.game:hover {
+  background-color: rgb(255, 94, 65);
+}
+
+#whatcontent h2 {
+  background-color: rgb(255, 94, 65);
+  color: black;
+}
+#whatcontent h3 {
+  color: rgb(255, 94, 65);
+}
+
 /* ================================ Style How ============================ */
 
 .listcontainer {
-  /* margin-top: 3em; */
+  margin-top: 3em;
 }
 
 .listcontainer:not(:first-child) {
@@ -229,7 +251,9 @@ article {
 .togglelist:hover {
   background-color: rgb(255, 112, 87);
   color: #1a1c20;
+  font-weight: 500;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .listtext {
@@ -239,7 +263,11 @@ article {
   background-color: rgba(255, 255, 255, 0.007);
   color: rgb(161, 159, 159);
   font-weight: 100;
-  padding: 0 2em;
+}
+
+.listtext h4,
+.listtext p {
+  margin: 2em;
 }
 
 code {
@@ -248,13 +276,153 @@ code {
 }
 
 .circuit {
-  float: right;
-  width: 60%;
+  /* float: right; */
+  /* width: 50%; */
   margin: 2em 5% 0 5%;
   /* margin-right: 5%; */
   /* margin-top: -5em; */
 }
 
+.sect {
+  margin-bottom: 4em;
+}
+
+.gallary {
+  /* flex-wrap: wrap; */
+  margin: 1em;
+}
+
+.gallary img {
+  width: 30%;
+  padding: 0.5em;
+}
+
+.sketch {
+  margin: 4em 4em;
+  width: 90%;
+}
+
+#howcontent h2 {
+  background-color: rgb(255, 112, 87);
+}
+#howcontent h3 {
+  color: rgb(255, 112, 87);
+}
 /* ================================ Style Why ============================ */
 
+#whycontent h2 {
+  background-color: #fc9c89;
+}
+#whycontent h3 {
+  color: #fc9c89;
+}
+
 /* ================================ Style Who ============================ */
+#whocontent h2 {
+  background-color: #fdd9d2;
+}
+#whocontent h3 {
+  color: #fdd9d2;
+}
+
+/* =================== Responsive the menu ====================================*/
+
+@media screen and (max-width: 700px) {
+  body {
+    width: 100%;
+  }
+
+  .menubar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .menubar a {
+    float: left;
+  }
+
+  article {
+    width: 100%;
+    margin: auto;
+    float: none;
+  }
+
+  .content {
+    margin: auto;
+    width: 100%;
+  }
+
+  .innercontent {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  * {
+    width: 100%;
+  }
+  header {
+    margin: 0;
+    padding: 0;
+  }
+  .greeting {
+    font-size: 36px;
+    width: 80%;
+    text-align: left;
+  }
+  #logo {
+    display: block;
+  }
+  #logo img {
+    width: 55px;
+    margin: unset;
+    padding: unset;
+    top: -50px;
+    left: 15px;
+  }
+
+  #logo img:last-child {
+    left: -40px;
+    top: -40px;
+  }
+
+  .menubar {
+    width: 100%;
+    /* height: auto; */
+    position: sticky;
+  }
+
+  .menubar a {
+    text-align: center;
+    display: inline-block;
+    float: none;
+    position: static;
+    /* transition: 0.3s; */
+    padding: unset;
+    margin: unset;
+    width: 20%;
+
+    /* text-decoration: none; */
+    font-size: 20px;
+    /* color: #1a1c20; */
+    border-radius: 0;
+    /* top: -5em; */
+  }
+
+  article {
+    margin: auto;
+    float: none;
+  }
+
+  .content {
+    margin: auto;
+    width: 100%;
+  }
+
+  .innercontent {
+    width: 100%;
+    margin: auto;
+  }
+}
