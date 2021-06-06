@@ -209,6 +209,9 @@ article {
   margin: 10em 0;
   width: 80%;
 }
+.innercontent img {
+  width: 90%;
+}
 
 #sketch1 {
   width: 40em;
@@ -333,8 +336,18 @@ code {
 }
 
 iframe {
-  width: 90%;
-  height: auto;
+  width: 100%;
+  height: 720px;
+}
+
+video {
+  width: 100%;
+  height: 720px;
+}
+
+object {
+  width: 100%;
+  height: 600px;
 }
 
 /* =================== Responsive the menu ====================================*/
@@ -424,6 +437,7 @@ iframe {
 
   video {
     width: 100%;
+    height: 50%;
   }
 }
 
@@ -465,6 +479,11 @@ iframe {
     top: -40px;
   }
 
+  .welcome {
+    font-size: 12px;
+    /* margin: unset; */
+    right: 5em;
+  }
   .menubar {
     width: 100%;
     /* height: auto; */
@@ -475,7 +494,7 @@ iframe {
     text-align: center;
     display: inline-block;
     float: none;
-    position: static;
+    position: sticky;
     /* transition: 0.3s; */
     padding: unset;
     margin: unset;
@@ -505,5 +524,6 @@ iframe {
 
   video {
     width: 100%;
+    height: 50%;
   }
 }
